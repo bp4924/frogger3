@@ -183,7 +183,7 @@ function loser() {
     squares[currentIndex].classList.contains("c2") ||
     squares[currentIndex].classList.contains("l4") ||
     squares[currentIndex].classList.contains("l5") ||
-    countdown === 0
+    countdown < 1
   ) {
     resultDisplay.innerHTML = "You Lose  &#128554";
     clearInterval(timerId);
@@ -209,7 +209,7 @@ function timer() {
   } else {
     timeLeftDisplay.style.color = "black";
   }
-  timeLeftDisplay.textContent--;
+  timeLeftDisplay.textContent = countdown;
 }
 
 function checkStatus() {
@@ -218,6 +218,7 @@ function checkStatus() {
 }
 
 function startPause() {
+  console.log(countdown);
   if (startPauseButton.innerHTML == "Pause") {
     startPauseButton.innerHTML = "Start";
     document.removeEventListener("keyup", moveFrog);
@@ -240,7 +241,8 @@ function startGame() {
   startPauseButton.innerHTML = "Pause";
   document.addEventListener("keyup", moveFrog);
   timerId = setInterval(autoMoveElements, 1000);
-  timeLeftDisplay.textContent = countdown + 1;
+  console.log(countdown);
+  timeLeftDisplay.textContent = countdown;
   resultDisplay.textContent = moveCount;
 
   squares[currentIndex].classList.add("frog");
