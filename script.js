@@ -17,10 +17,6 @@ let timerId;
 let countdown = 20;
 let moveCount = 0;
 
-let currentDate = new Date();
-let time = currentDate.getSeconds();
-console.log(time);
-
 function moveFrog(e) {
   moveCount++;
   squares[currentIndex].classList.remove("frog");
@@ -210,17 +206,15 @@ function winner() {
 function timer() {
   if (countdown < 6) {
     timeLeftDisplay.style.color = "red";
+  } else {
+    timeLeftDisplay.style.color = "black";
   }
   timeLeftDisplay.textContent--;
-  currentDate = new Date();
-  time = 60 - currentDate.getSeconds();
 }
 
 function checkStatus() {
   winner();
   loser();
-  console.log(countdown);
-  console.log(time);
 }
 
 function startPause() {
@@ -243,7 +237,6 @@ function startPause() {
 
 function startGame() {
   squares[4].classList.remove("frog");
-
   startPauseButton.innerHTML = "Pause";
   document.addEventListener("keyup", moveFrog);
   timerId = setInterval(autoMoveElements, 1000);
