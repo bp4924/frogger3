@@ -33,5 +33,8 @@ Approaching MVP
 ### Screenshot
 
 
+![App Screenshot](https://bp4924.github.io/frogger3/ss1.jpg)
+
+
 ## Link
 https://bp4924.github.io/frogger3/
