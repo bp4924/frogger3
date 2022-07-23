@@ -29,3 +29,9 @@ Call the loser(), winner() on each interval using checkStatus(). Cannot call tim
 The move left / move right processes seem clumsy to me. Maybe reversing the div classes in the html for the right movement elements will allow me to clean up the js
 
 Approaching MVP
+
+### Screenshot
+
+
+## Link
+https://bp4924.github.io/frogger3/
